@@ -19,4 +19,9 @@ class Car extends Model
     {
         return $this->belongsTo(Orang::class);
     }
+
+    public function addresses()
+    {
+        return $this->belongsToMany(Address::class, "address_car");
+    }
 }

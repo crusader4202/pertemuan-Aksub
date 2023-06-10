@@ -10,7 +10,22 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($orangs as $orang)
+            @forelse ($cars as $car)
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{ $car->name }}</td>
+                    <td>{{ $car->address }}</td>
+                    @forelse ($car->addresses as $address)
+                        <td>{{ $address->name }}</td>
+                    @empty
+                        <h1>No car</h1>
+                    @endforelse
+                </tr>
+            @empty
+                <h1>Empty</h1>
+            @endforelse
+
+            {{-- @forelse ($orangs as $orang)
                 <tr>
                     <th scope="row">1</th>
                     <td>{{ $orang->name }}</td>
@@ -34,7 +49,7 @@
                 </tr>
             @empty
                 <h1>Empty</h1>
-            @endforelse
+            @endforelse --}}
         </tbody>
     </table>
 @endsection

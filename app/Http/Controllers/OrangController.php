@@ -54,7 +54,7 @@ class OrangController extends Controller
         //     "age" => 10,
         //     "picture" => "lol",
         // ]);
-        // Address::create([
+        // $address = Address::create([
         //     "name" => "Jalanbuntu",
         //     "city" => "Jakarta",
         //     "oid" => $orang->id,
@@ -64,14 +64,20 @@ class OrangController extends Controller
         //     "year" => 2002,
         //     "user_id" => 1,
         // ]);
-        // Car::create([
+        // $car = Car::create([
         //     "name" => "Merci",
         //     "year" => 2022,
         //     "user_id" => $orang->id,
         // ]);
-        $orangs = Orang::all();
+
+        // $car = Car::first();
+        // $address = Address::first();
+
+        // $car->addresses()->attach($address->id);
+        $orangs = Orang::first();
+        $cars = Car::all();
         // dd($orangs->name);
-        return view('list', compact('orangs'));
+        return view('list', compact('orangs', "cars"));
     }
 
     public function download($id)

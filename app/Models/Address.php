@@ -17,6 +17,11 @@ class Address extends Model
 
     public function orang()
     {
-        return $this->belongsTo(Orang::class);
+        return $this->belongsTo(Orang::class)->withDefault(['name' => 'Guest']);
+    }
+
+    public function cars()
+    {
+        return $this->belongsToMany(Car::class, "address_car");
     }
 }
