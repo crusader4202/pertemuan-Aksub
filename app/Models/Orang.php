@@ -19,4 +19,9 @@ class Orang extends Model
     {
         return $this->hasOne(Address::class, "oid"); // you can change the foreign key name based on the column name
     }
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class, "user_id");
+    }
 }

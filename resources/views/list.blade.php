@@ -15,6 +15,11 @@
                     <th scope="row">1</th>
                     <td>{{ $orang->name }}</td>
                     <td>{{ $orang->address }}</td>
+                    @forelse ($orang->cars as $car)
+                        <td>{{ $car->name }}</td>
+                    @empty
+                        <h1>No car</h1>
+                    @endforelse
                     <td><img src="{{ asset('storage/images/' . $orang->picture) }}" style="width: 100px; height: 100px"></td>
                     <td><a href="{{ route('download', $orang->id) }}"><button type="button"
                                 class="btn btn-primary">Download</button></a></td>

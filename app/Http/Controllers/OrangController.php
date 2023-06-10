@@ -6,6 +6,7 @@ use App\Models\Orang;
 use App\Http\Requests\StoreOrangRequest;
 use App\Http\Requests\UpdateOrangRequest;
 use App\Models\Address;
+use App\Models\Car;
 use Illuminate\Http\Client\Request as ClientRequest;
 use Illuminate\Http\Request;
 
@@ -48,16 +49,26 @@ class OrangController extends Controller
      */
     public function show(Orang $orang)
     {
-        $orang = Orang::create([
-            "name" => "Harry",
-            "age" => 10,
-            "picture" => "lol",
-        ]);
-        Address::create([
-            "name" => "Jalanbuntu",
-            "city" => "Jakarta",
-            "oid" => $orang->id,
-        ]);
+        // $orang = Orang::create([
+        //     "name" => "Harry",
+        //     "age" => 10,
+        //     "picture" => "lol",
+        // ]);
+        // Address::create([
+        //     "name" => "Jalanbuntu",
+        //     "city" => "Jakarta",
+        //     "oid" => $orang->id,
+        // ]);
+        // Car::create([
+        //     "name" => "BMW",
+        //     "year" => 2002,
+        //     "user_id" => 1,
+        // ]);
+        // Car::create([
+        //     "name" => "Merci",
+        //     "year" => 2022,
+        //     "user_id" => $orang->id,
+        // ]);
         $orangs = Orang::all();
         // dd($orangs->name);
         return view('list', compact('orangs'));
