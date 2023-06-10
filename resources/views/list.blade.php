@@ -14,12 +14,13 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>{{ $orang->name }}</td>
-                    <td>{{ $orang->age }}</td>
+                    <td>{{ $orang->address }}</td>
                     <td><img src="{{ asset('storage/images/' . $orang->picture) }}" style="width: 100px; height: 100px"></td>
                     <td><a href="{{ route('download', $orang->id) }}"><button type="button"
                                 class="btn btn-primary">Download</button></a></td>
                     <td><a href="{{ route('edit', $orang->id) }}"><button type="button"
-                                class="btn btn-info">Edit</button></a></td>
+                                class="btn btn-info">Edit</button></a>
+                    </td>
                     <form action="{{ route('delete', $orang->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

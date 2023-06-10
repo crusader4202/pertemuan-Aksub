@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Orang;
 use App\Http\Requests\StoreOrangRequest;
 use App\Http\Requests\UpdateOrangRequest;
+use App\Models\Address;
 use Illuminate\Http\Client\Request as ClientRequest;
 use Illuminate\Http\Request;
 
@@ -47,7 +48,18 @@ class OrangController extends Controller
      */
     public function show(Orang $orang)
     {
+        $orang = Orang::create([
+            "name" => "Harry",
+            "age" => 10,
+            "picture" => "lol",
+        ]);
+        Address::create([
+            "name" => "Jalanbuntu",
+            "city" => "Jakarta",
+            "oid" => $orang->id,
+        ]);
         $orangs = Orang::all();
+        // dd($orangs->name);
         return view('list', compact('orangs'));
     }
 

@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Orang extends Model
+class Address extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'age',
-        'picture',
+        'city',
+        'oid',
     ];
 
-    public function address()
+    public function orang()
     {
-        return $this->hasOne(Address::class, "oid"); // you can change the foreign key name based on the column name
+        return $this->belongsTo(Orang::class);
     }
 }
