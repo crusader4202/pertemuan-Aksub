@@ -6,7 +6,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
-                <th scope="col">Picture</th>
+                <th scope="col">Cars</th>
             </tr>
         </thead>
         <tbody>

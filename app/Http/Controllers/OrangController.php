@@ -67,17 +67,17 @@ class OrangController extends Controller
         // $car = Car::create([
         //     "name" => "Merci",
         //     "year" => 2022,
-        //     "user_id" => $orang->id,
+        //     "user_id" => 1,
         // ]);
 
         // $car = Car::first();
         // $address = Address::first();
 
-        // $car->addresses()->attach($address->id);
-        $orangs = Orang::first();
+        // $car->addresses()->attach($address);
         $cars = Car::all();
+        // $cars = Car::all();
         // dd($orangs->name);
-        return view('list', compact('orangs', "cars"));
+        return view('list', compact('cars'));
     }
 
     public function download($id)
